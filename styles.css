@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+*:root {
+  --ff-primary: 'Patrick Hand', cursive;
+  --ff-secondary: 'Alfa Slab One', cursive;
+}
+
+html, body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+}
+
+h1 {font-family: var(--ff-secondary);}
+
+a {
+  color: #BFB99B;
+}
+
+a:hover {
+  color: #D95F69;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+.flow-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button {
+  margin: 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  width: 100px;
+  height: 30px;
+}
+
+.button:hover {
+  cursor: pointer;
+  border: 1px solid #BFB99B;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #BFB99B;
+  font-size: 18px;
+  transition: .2s;
+  opacity: .7;
+
+  /*make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd) {
+  background: #F2E18D;
+}
+
+ul li:hover {
+  opacity: 1;
+}
+
+ul li.checked {
+  background: #D95F69;
+  color: #F2F2F2;
+  text-decoration: line-through;
+}
+
+/*Add a checked marked when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #F2F2F2;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  color: #000;
+}
+
+.close:hover {
+  background-color: #F29544;
+  color: #F2F2F2;
+}
+
+#inputDiv {
+  position: absolute;
+  left: 20%;
+  padding: 20px;
+  background-color: #F2F2F2;
+  border-radius: 5px 5px 5px;
+  display: none;
+}
+
+@media (min-width:768px) {
+  .container {
+    max-width: 500px;
+  }
+}
